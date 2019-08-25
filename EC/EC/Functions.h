@@ -13,12 +13,12 @@ void setupCheck(string filename)
 	ifstream configFile(filename);
 	if (!configFile.is_open())
 	{
-		cout << "		First time setup starting!" << '\n';
+		cout << setfill('-') << setw(35) << "First time setup starting!" << '\n';
 		ofstream myfile(filename);
 		myfile << "Y ";
 		cout << "What is your name: ";
 		string* name = new string;
-		cin >> *name;
+		getline(cin, *name);
 		myfile << *name;
 	}
 	else if (configFile.is_open())
@@ -46,11 +46,13 @@ void WelcomeMessage(string filename)
 	ifstream configFile(filename);
 	configFile >> name;
 	getline(configFile, name);
+	name += ' ';
+	cout << "								      ";
 	cout << setfill('-') << setw(name.size() + Message.size() + 3) << "-" << endl;
+	cout << "								      ";
 	cout << "| "<< Message << name << '|' << '\n';
+	cout << "								      ";
 	cout << setfill('-') << setw(name.size() + Message.size() + 3) << "-" <<endl;
-
-
 }
 
 
