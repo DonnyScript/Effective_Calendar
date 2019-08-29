@@ -118,25 +118,42 @@ public:
 	void Menu()
 	{
 		char* option = new char;
-		cout << "Would you like to add your list?( Type 'A')\n";
-		cout << "Would you like to delete?( Type 'D' ) \n";
-		cin >> option;
 
-		switch (*option)
+		do
 		{
-		case 'A':
-			this->addToList();
-			break;
+			cout << "Would you like to add your list?( Type 'A')\n";
+			cout << "Would you like to delete?( Type 'D' ) \n";
+			cout << "To quit Press Q \n";
+			cin >> option;
+			switch (*option)
+			{
+			case 'A':
+				this->addToList();
+				break;
 
-		case 'D':
-			this->DeleteFromList();
-			break;
+			case 'D':
+				this->DeleteFromList();
+				break;
 
+			case 'Q':
+				break;
 
+			default:
+				break;
+			}
+			if (*option != 'Q')
+			{
+				ifstream ToDoList(this->filename);
+				string line;
 
+				while (!ToDoList.eof())
+				{
+					getline(ToDoList, line);
+					cout << line << '\n';
 
-		default: 
-			break;
-		}
+				}
+				ToDoList.close();
+			}
+		} while (*option != 'Q');
 	}
 };
