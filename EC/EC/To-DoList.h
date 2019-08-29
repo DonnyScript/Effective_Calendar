@@ -83,32 +83,30 @@ public:
 		cin >> LineNum;
 		LineNum += 2;
 
-		ifstream is("ToDoList.txt");
+		ifstream ToDoListStream("ToDoList.txt");
 
-		ofstream ofs;
-		ofs.open("temp.txt", ofstream::out);
+		ofstream TempOutput;
+		TempOutput.open("temp.txt", ofstream::out);
 
 		 
-		char c;
+		char TempChar;
 		int line_no = 1;
-		while (is.get(c))
+		while (ToDoListStream.get(TempChar))
 		{
 			 
-			if (c == '\n')
+			if (TempChar == '\n')
 			{
 				line_no++;
 			}
 
-			
 			if (line_no != LineNum)
 			{
-				ofs << c;
+				TempOutput << TempChar;
 			}
 		}
 
-		 
-		ofs.close();
-		is.close();
+		TempOutput.close();
+		ToDoListStream.close();
 
 		remove("ToDoList.txt");
 		rename("temp.txt", "ToDoList.txt");
@@ -123,7 +121,7 @@ public:
 		{
 			cout << "Would you like to add your list?( Type 'A')\n";
 			cout << "Would you like to delete?( Type 'D' ) \n";
-			cout << "To quit Press Q \n";
+			cout << "Press Q to quit \n";
 			cin >> option;
 			*option = toupper(*option);
 			switch (*option)
@@ -151,7 +149,6 @@ public:
 				{
 					getline(ToDoList, line);
 					cout << line << '\n';
-
 				}
 				ToDoList.close();
 			}

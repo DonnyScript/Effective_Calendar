@@ -70,6 +70,7 @@ void firstMenu(char& option)
 	cout << "Would you like to see your to-do list?( Type 'T')" << endl;
 	cout << "Would you like to see todays schedule?( Type 'S' ) " << endl;
 	cout << "Would you like to see the current month?( Type 'M') " << endl;
+	cout << "Press Q to quit" << endl;
 	cin >> option;
 	option = toupper(option);
 }

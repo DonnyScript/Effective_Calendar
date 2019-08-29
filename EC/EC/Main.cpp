@@ -7,26 +7,28 @@ int main()
 	setupCheck(filename);
 	WelcomeMessage(filename);
 	char option;
-	firstMenu(option);
 
+	do {
+		firstMenu(option);
+		switch (option)
+		{
 
-	switch (option)
-	{
+		case 'T':
+			To_DoList->getToDoList();
+			break;
 
-	case 'T':
-		To_DoList->getToDoList();
-		break;
+		case 'S':
 
-	case 'S':
+		case 'Q':
+			break;
 
-
-
-
-	default: 
-		cout << "Please select a valid option.\n";
-		break;
-	}
-
+		default:
+			cout << "Please select a valid option: ";
+			cin >> option;
+			option = toupper(option);
+			break;
+		}
+		} while (option != 'Q');
 	
 	system("pause");
 	return 0;
