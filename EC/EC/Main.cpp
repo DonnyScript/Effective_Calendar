@@ -6,11 +6,11 @@ int main()
 	ToDoList* To_DoList = new ToDoList("ToDoList.txt");
 	setupCheck(filename);
 	WelcomeMessage(filename);
-	char* option = new char;
+	char option;
 	firstMenu(option);
 
 
-	switch (*option)
+	switch (option)
 	{
 
 	case 'T':

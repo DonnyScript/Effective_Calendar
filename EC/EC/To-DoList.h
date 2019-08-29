@@ -49,7 +49,7 @@ public:
 			cout << "Add the activity: ";
 			cin.ignore();
 			getline(cin, addItem);
-			cout << "What Tier? (1,2,3): ";
+			cout << "How time sensitive? (1,2,3): ";
 			cin >> option;
 			cout << endl;
 			switch (option)
@@ -125,6 +125,7 @@ public:
 			cout << "Would you like to delete?( Type 'D' ) \n";
 			cout << "To quit Press Q \n";
 			cin >> option;
+			*option = toupper(*option);
 			switch (*option)
 			{
 			case 'A':
