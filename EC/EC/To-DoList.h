@@ -119,9 +119,10 @@ public:
 
 		do
 		{
-			cout << "Would you like to add your list?( Type 'A')\n";
-			cout << "Would you like to delete?( Type 'D' ) \n";
+			cout << "To add an activity Type 'A'.\n";
+			cout << "To delete an activity Type 'D'  \n";
 			cout << "Press Q to quit \n";
+			cout << "-> ";
 			cin >> option;
 			*option = toupper(*option);
 			switch (*option)
