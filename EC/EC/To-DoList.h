@@ -38,7 +38,6 @@ public:
 
 	}
 
-
 	void addToList()
 	{
 		ofstream ToDoList(this->filename, ofstream::app);
@@ -111,7 +110,6 @@ public:
 		remove("ToDoList.txt");
 		rename("temp.txt", "ToDoList.txt");
 	}
-
 
 	void Menu()
 	{
