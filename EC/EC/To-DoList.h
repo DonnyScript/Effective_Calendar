@@ -104,7 +104,7 @@ public:
 				TempOutput << TempChar;
 			}
 		}
-
+   
 		TempOutput.close();
 		ToDoListStream.close();
 
