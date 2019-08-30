@@ -74,6 +74,7 @@ void firstMenu(char& option)
 	cout << "-> ";
 	cin >> option;
 	option = toupper(option);
+	cout << setfill('_') << setw(50) << '_' << endl;
 }
 
 #endif

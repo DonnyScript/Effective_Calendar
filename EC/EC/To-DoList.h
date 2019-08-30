@@ -152,5 +152,6 @@ public:
 				ToDoList.close();
 			}
 		} while (*option != 'Q');
+		cout << setfill('_') << setw(50) << '_' << endl;
 	}
 };
