@@ -31,8 +31,8 @@ public:
 		{
 			getline(ToDoList, line);
 			cout << line << '\n';
-			
 		}
+		cout << setfill('_') << setw(50) << '_' << endl;
 		ToDoList.close();
 		this->Menu();
 
@@ -50,6 +50,7 @@ public:
 			getline(cin, addItem);
 			cout << "How time sensitive? (1,2,3): ";
 			cin >> option;
+			cout << setfill('_') << setw(50) << '_' << endl;
 			cout << endl;
 			switch (option)
 			{
@@ -109,6 +110,7 @@ public:
 
 		remove("ToDoList.txt");
 		rename("temp.txt", "ToDoList.txt");
+		cout << setfill('_') << setw(50) << '_' << endl;
 	}
 
 	void Menu()
@@ -149,6 +151,7 @@ public:
 					getline(ToDoList, line);
 					cout << line << '\n';
 				}
+				cout << setfill('_') << setw(50) << '_' << endl;
 				ToDoList.close();
 			}
 		} while (*option != 'Q');
