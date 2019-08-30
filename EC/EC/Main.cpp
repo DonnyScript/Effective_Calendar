@@ -30,6 +30,6 @@ int main()
 		}
 		} while (option != 'Q');
 	
-	system("pause");
+	//system("pause");
 	return 0;
 }
