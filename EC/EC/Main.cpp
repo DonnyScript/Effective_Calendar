@@ -30,6 +30,5 @@ int main()
 		}
 		} while (option != 'Q');
 	
-	//system("pause");
 	return 0;
 }
