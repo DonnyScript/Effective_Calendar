@@ -17,7 +17,7 @@ int main()
 			To_DoList->getToDoList();
 			break;
 
-		case 'S':
+		case 'S':// Make new class or .h file and code schedule
 
 		case 'Q':
 			break;
