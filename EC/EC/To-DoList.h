@@ -22,7 +22,7 @@ public:
 		Date << 1 + LocalTime->tm_mon << '/' << LocalTime->tm_mday << '/' << 1900 + LocalTime->tm_year << '\n';
 		Date << "				";
 		Date << "To-Do List\n";
-		Date.close();
+		Date.close(); // This is for the date
 
 		ifstream ToDoList(this->filename);
 		string line;
