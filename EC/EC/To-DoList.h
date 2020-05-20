@@ -119,8 +119,8 @@ public:
 
 		do
 		{
-			cout << "To add an activity Type 'A'.\n";
-			cout << "To delete an activity Type 'D'  \n";
+			cout << "To add an item Type 'A'.\n";
+			cout << "To delete an item Type 'D'  \n";
 			cout << "Press Q to quit \n";
 			cout << "-> ";
 			cin >> option;

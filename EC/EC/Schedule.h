@@ -20,22 +20,65 @@ public:
 		fstream Date(this->filename);
 		Date << 1 + LocalTime->tm_mon << '/' << LocalTime->tm_mday << '/' << 1900 + LocalTime->tm_year << '\n';
 		Date << "				";
-		Date << "To-Do List\n";
+		Date << "Schedule\n";
 		Date.close();
 
 
-		ifstream ToDoList(this->filename);
-		string line;
+		ifstream ScheduleFile(this->filename);
+		string lines;
 
-		while (!ToDoList.eof())
+		while (!ScheduleFile.eof())
 		{
-			getline(ToDoList, line);
-			cout << line << '\n';
+			getline(ScheduleFile, lines);
+			cout << lines << '\n';
 		}
 		cout << setfill('_') << setw(50) << '_' << endl;
-		ToDoList.close();
+		ScheduleFile.close();
 		this->Menu();
+	}
 
+	void Menu()
+	{
+		char* option = new char;
 
+		do
+		{
+			cout << "To add an activity Type 'A'.\n";
+			cout << "To delete an activity Type 'D'  \n";
+			cout << "Press Q to quit \n";
+			cout << "-> ";
+			cin >> option;
+			*option = toupper(*option);
+			switch (*option)
+			{
+			case 'A':
+				// Add to the schedule with time
+				break;
+
+			case 'D':
+				// Delete or complete item from list
+				break;
+
+			case 'Q':
+				break;
+
+			default:
+				break;
+			}
+			if (*option != 'Q')
+			{
+				ifstream ScheduleFile(this->filename);
+				string line;
+
+				while (!ScheduleFile.eof())
+				{
+					getline(ScheduleFile, line);
+					cout << line << '\n';
+				}
+				cout << setfill('_') << setw(50) << '_' << endl;
+				ScheduleFile.close();
+			}
+		} while (*option != 'Q');
+		cout << setfill('_') << setw(50) << '_' << endl;
 	}
 };
