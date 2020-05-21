@@ -45,7 +45,7 @@ public:
 		int option;
 		string find;
 
-			cout << "Add the activity: ";
+			cout << "Add the item: ";
 			cin.ignore();
 			getline(cin, addItem);
 			cout << "How time sensitive? (1,2,3): ";

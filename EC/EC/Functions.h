@@ -40,11 +40,21 @@ void setupCheck(string filename)
 			return;
 		}
 	}
-	ifstream ToDo("ToDoList.txt");
+
+	ifstream ToDo("ToDoList.txt");// Create file
 	if (!ToDo.is_open())
 	{
 		cout << "Creating To-Do List File \n";
 		ofstream input("ToDoList.txt");
+		ToDo.close();
+	}
+
+	ifstream Sched("Schedule.txt");// Create file
+	if (!Sched.is_open())
+	{
+		cout << "Creating Schedule File \n"; 
+		ofstream input("Schedule.txt");
+		Sched.close();
 	}
 }
 
@@ -66,7 +76,6 @@ void WelcomeMessage(string filename)
 
 void firstMenu(char& option)
 {
-
 	cout << "Would you like to see your to-do list?( Type 'T')" << endl;
 	cout << "Would you like to see todays schedule?( Type 'S' ) " << endl;// Work on this
 	cout << "Would you like to see the current month?( Type 'M') " << endl;

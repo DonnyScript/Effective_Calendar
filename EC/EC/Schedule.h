@@ -37,6 +37,34 @@ public:
 		this->Menu();
 	}
 
+	void addToSchedule()
+	{
+		ofstream Schedule(this->filename, ofstream::app);
+		int addItem;
+		int option;
+		string AorP;
+
+		cout << "What time is this at? ";
+		cout << "Hour: ";
+		cin >> addItem;
+		Schedule << addItem;
+		Schedule << ':';
+		cout << "Minute: ";
+		cin >> addItem;
+		Schedule << addItem;
+		Schedule << " ";
+		cout << "A.M (type 'a') or P.M (type 'p'): ";
+		cin >> AorP;
+		if (AorP =="a")// make it less breakable 
+		{
+			AorP = "A.M";
+			Schedule << "A.M \n";
+			Schedule.close();
+		}
+
+
+	}
+
 	void Menu()
 	{
 		char* option = new char;
@@ -52,7 +80,7 @@ public:
 			switch (*option)
 			{
 			case 'A':
-				// Add to the schedule with time
+				this->addToSchedule(); 
 				break;
 
 			case 'D':
