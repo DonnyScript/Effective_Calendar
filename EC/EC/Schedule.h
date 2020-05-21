@@ -40,28 +40,35 @@ public:
 	void addToSchedule()
 	{
 		ofstream Schedule(this->filename, ofstream::app);
-		int addItem;
+		int time;
 		int option;
 		string AorP;
+		string activity;
 
 		cout << "What time is this at? ";
 		cout << "Hour: ";
-		cin >> addItem;
-		Schedule << addItem;
+		cin >> time;
+		Schedule << time;
 		Schedule << ':';
 		cout << "Minute: ";
-		cin >> addItem;
-		Schedule << addItem;
-		Schedule << " ";
+		cin >> time;
+		Schedule << time;
+		Schedule << " " << endl;
 		cout << "A.M (type 'a') or P.M (type 'p'): ";
-		cin >> AorP;
+		cin >> AorP;// not making it here for some reason
 		if (AorP =="a")// make it less breakable 
 		{
-			AorP = "A.M";
 			Schedule << "A.M \n";
-			Schedule.close();
 		}
-
+		if (AorP == "p")
+		{
+			Schedule << "P.M \n";
+		}
+		cout << "What is the activity name?: ";
+		/*cin.ignore();*/
+		getline(cin, activity + "\n");
+		cout << setfill('_') << setw(50) << '_' << endl;
+		cout << endl;
 
 	}
 
