@@ -51,25 +51,29 @@ public:
 		Schedule << time;
 		Schedule << ':';
 		cout << "Minute: ";
-		cin >> time;
+		cin >> time ;
 		Schedule << time;
-		Schedule << " " << endl;
+		
+
 		cout << "A.M (type 'a') or P.M (type 'p'): ";
 		cin >> AorP;// not making it here for some reason
-		if (AorP =="a")// make it less breakable 
+		if (AorP =="a")// improve this 
 		{
-			Schedule << "A.M \n";
+			Schedule << " A.M ";
 		}
 		if (AorP == "p")
 		{
-			Schedule << "P.M \n";
+			Schedule << " P.M ";
 		}
+
+		Schedule << "-";
 		cout << "What is the activity name?: ";
-		/*cin.ignore();*/
-		getline(cin, activity + "\n");
+		cin.ignore();
+		getline(cin, activity);
+		Schedule << activity<<endl; 
 		cout << setfill('_') << setw(50) << '_' << endl;
 		cout << endl;
-
+		Schedule.close();
 	}
 
 	void Menu()
