@@ -48,22 +48,35 @@ public:
 		cout << "What time is this at? ";
 		cout << "Hour: ";
 		cin >> time;
+		if (time < 12)
+		{
+			cout << "Pick hour less than 12:";
+			cin >> time;
+		}
 		Schedule << time;
 		Schedule << ':';
 		cout << "Minute: ";
 		cin >> time ;
-		Schedule << time;
+		if (time <= 9)
+		{
+			Schedule << 0;
+			Schedule << time;
+		}
+		else
+		{
+			Schedule << time;
+		}
 		
 
 		cout << "A.M (type 'a') or P.M (type 'p'): ";
 		cin >> AorP;// not making it here for some reason
 		if (AorP =="a")// improve this 
 		{
-			Schedule << " A.M ";
+			Schedule << ".A ";
 		}
 		if (AorP == "p")
 		{
-			Schedule << " P.M ";
+			Schedule << ".P ";
 		}
 
 		Schedule << "-";
