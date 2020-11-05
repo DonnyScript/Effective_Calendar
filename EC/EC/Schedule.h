@@ -89,6 +89,40 @@ public:
 		Schedule.close();
 	}
 
+	void DeleteFromSchedule()
+	{
+		int LineNum;
+		cout << "What line number: ";
+		cin >> LineNum;
+		LineNum += 2;
+
+		ifstream ScheduleStream("Schedule.txt");
+
+		ofstream TempOut;
+		TempOut.open("temp.txt", ofstream::out);
+
+		char tempChar;
+		int line_no = 1;
+		while (ScheduleStream.get(tempChar))
+		{
+			if (tempChar == '\n')
+			{
+				line_no++;
+			}
+
+			if (line_no != LineNum)
+			{
+				TempOut << tempChar;
+			}
+		}
+
+		remove("Schedule.txt");
+		rename("temp.txt", "Schedule.txt");
+		cout << setfill('_') << setw(50) << '_' << endl;
+
+
+	}
+
 	void Menu()
 	{
 		char* option = new char;
@@ -108,7 +142,7 @@ public:
 				break;
 
 			case 'D':
-				// Delete or complete item from list
+				this->DeleteFromSchedule();
 				break;
 
 			case 'Q':
